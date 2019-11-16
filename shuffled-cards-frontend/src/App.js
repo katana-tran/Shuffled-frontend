@@ -1,5 +1,5 @@
 import React from 'react';
-import Test from './components/test.js'
+import Login from './components/test.js'
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Test}/>
+          <Route path="/" exact component={Login}/>
         </Switch>
       </BrowserRouter>
     </div>

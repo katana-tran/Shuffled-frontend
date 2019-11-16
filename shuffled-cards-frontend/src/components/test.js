@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-const Test = () => {
+const Login = () => {
 
 
 
@@ -15,4 +15,4 @@ const Test = () => {
         </div>
     )
 }
-export default Test;
+export default Login;
