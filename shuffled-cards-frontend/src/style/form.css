@@ -1,4 +1,6 @@
 .login {
+  background-image: url('../images/hearthstonegameclone.jpg');  
+  background-size: cover;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);  
@@ -6,6 +8,8 @@
 
 .form {
     padding: 5%;
+    background: whitesmoke;
+    opacity: 80%;
 
         border: 10px;
         border-color: crimson;
