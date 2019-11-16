@@ -54,7 +54,7 @@ class NormalLoginForm extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form onSubmit={this.handleSubmit}  className="login-form">
+            <Form onSubmit={this.handleSubmit} className="login-form" style={{padding: '5%'}}>
                 {this.state.invalid && <p>Invalid Username or Password</p>}
                 <Form.Item>
                     {getFieldDecorator('username', {
