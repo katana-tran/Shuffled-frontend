@@ -1,17 +1,16 @@
 .login {
   background-image: url('../images/hearthstonegameclone.jpg');  
-  background-color: #cccccc;
-  height: 900px;
+  background-color: burlywood;
+  height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);  
 }
 
 .form {
-    padding: 5%;
     background: whitesmoke;
     opacity: 80%;
 
