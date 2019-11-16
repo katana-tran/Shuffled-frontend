@@ -7,6 +7,11 @@ import jwtDecode from 'jwt-decode';
 
 
 class NormalLoginForm extends React.Component {
+    
+    state = {
+        invalid: false,
+    }
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -27,12 +32,21 @@ class NormalLoginForm extends React.Component {
 
                         })
                     })
-                    .then(res => res.json())
-                    .then(data => console.log(jwtDecode(data.jwt)))
+                    .then(res => {
+                            if(res.status === 404){
+                             console.log("invalid username or password")
+                            }
+                            else{
+                                res.json()
+                             }
+                       }
+                        
+                        )
+                    .then(data => console.log('Received data from jwt', jwtDecode(data.jwt)))
                     .catch(
 
                         (error) => {
-                            console.log("Error: ", error.message)
+                            console.log("invalid")
                             this.setState({
                                 invalid: true
                             })
@@ -50,6 +64,7 @@ class NormalLoginForm extends React.Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <Form onSubmit={this.handleSubmit}  className="login-form">
+                {this.state.invalid && <p>Invalid Username or Password</p>}
                 <Form.Item>
                     {getFieldDecorator('username', {
                         rules: [{ required: true, message: 'Please input your username!' }],
