@@ -32,21 +32,12 @@ class NormalLoginForm extends React.Component {
 
                         })
                     })
-                    .then(res => {
-                            if(res.status === 404){
-                             console.log("invalid username or password")
-                            }
-                            else{
-                                res.json()
-                             }
-                       }
-                        
-                        )
+                    .then(res => res.json())
                     .then(data => console.log('Received data from jwt', jwtDecode(data.jwt)))
                     .catch(
 
                         (error) => {
-                            console.log("invalid")
+                            console.log(error)
                             this.setState({
                                 invalid: true
                             })
