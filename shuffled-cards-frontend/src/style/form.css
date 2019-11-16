@@ -1,0 +1,15 @@
+.login {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);  
+}
+
+.form {
+    padding: 5%;
+
+        border: 10px;
+        border-color: crimson;
+        border-style: double;
+        grid-column: 2;
+        grid-row: 2;
+}
