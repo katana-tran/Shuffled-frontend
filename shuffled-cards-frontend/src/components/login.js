@@ -1,12 +1,17 @@
 import React from 'react';
-import Form from './form';
+import Form from './forms/form';
 import '../style/form.css'
 
-const Login = () => {
+
+const Login = (props) => {
+    const redirect = () => {
+       props.history.push('/homepage') 
+    }
+
     return(
         <div className="login">
             <div className="form">
-                <Form/>
+                <Form redirect={()=> redirect()}/>
             </div>
             
         </div>

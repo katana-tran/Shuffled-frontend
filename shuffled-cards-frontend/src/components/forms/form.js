@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import jwtDecode from 'jwt-decode';
+
 
 
 
@@ -12,6 +12,7 @@ class NormalLoginForm extends React.Component {
         invalid: false,
     }
 
+   
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -33,9 +34,11 @@ class NormalLoginForm extends React.Component {
                         })
                     })
                     .then(res => res.json())
-                    .then(data => console.log('Received data from jwt', jwtDecode(data.jwt)))
+                    .then(data => {
+                        localStorage.setItem('token', data)   
+                        this.props.redirect()      
+                    })
                     .catch(
-
                         (error) => {
                             console.log(error)
                             this.setState({
@@ -89,12 +92,12 @@ class NormalLoginForm extends React.Component {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
           </Button>
-                    Or <a href='http://localhost:3001/'>register now!</a>
+                    Or <a href='http://localhost:3001/signup'>register now!</a>
                 </Form.Item>
             </Form>
         );
     }
 }
 
-const WerappedRegistration = Form.create({ name: 'registrationform' })(NormalLoginForm);
-export default WerappedRegistration;
+const WrappedRegistration = Form.create({ name: 'registrationform' })(NormalLoginForm);
+export default WrappedRegistration;

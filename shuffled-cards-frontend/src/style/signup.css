@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3,1fr);  
