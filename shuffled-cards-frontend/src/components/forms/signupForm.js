@@ -38,7 +38,7 @@ class RegistrationForm extends React.Component {
                         avatar_picture: avatar_picture
                     })
                 }).then(res => res.json())
-                .then(res => res.success ? this.props.redirect() : null)
+                .then(this.props.redirect())
             }
         });
     };
