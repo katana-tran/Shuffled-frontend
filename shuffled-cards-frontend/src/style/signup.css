@@ -1,0 +1,22 @@
+.login {
+  background-image: url('../images/hearthstonegameclone.jpg');  
+  background-color: burlywood;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 1300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);  
+}
+
+.form {
+        margin-top: 20%;
+        background: whitesmoke;
+        opacity: 80%;
+        border: 10px;
+        border-color: crimson;
+        border-style: double;
+        grid-column: 2;
+        grid-row: 1/3;
+}

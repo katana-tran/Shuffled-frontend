@@ -92,12 +92,12 @@ class NormalLoginForm extends React.Component {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
           </Button>
-                    Or <a href='http://localhost:3001/'>register now!</a>
+                    Or <a href='http://localhost:3001/signup'>register now!</a>
                 </Form.Item>
             </Form>
         );
     }
 }
 
-const WerappedRegistration = Form.create({ name: 'registrationform' })(NormalLoginForm);
-export default WerappedRegistration;
+const WrappedRegistration = Form.create({ name: 'registrationform' })(NormalLoginForm);
+export default WrappedRegistration;

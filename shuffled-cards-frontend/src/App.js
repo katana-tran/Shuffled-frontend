@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './components/login.js'
 import HomePage from './components/homepage.js'
+import SignUp from './components/signupPage.js'
 import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import './App.css';
 import decode from 'jwt-decode';
@@ -40,6 +41,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Login}/>
           <PrivateRoute path='/homepage' exact component={HomePage}/>
+          <Route path='/signup' exact component={SignUp}/>
         </Switch>
       </BrowserRouter>
     </div>
