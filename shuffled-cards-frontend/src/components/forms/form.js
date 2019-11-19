@@ -35,9 +35,9 @@ class NormalLoginForm extends React.Component {
                     })
                     .then(res => res.json())
                     .then(data => {
-                        localStorage.setItem('token', data)   
-                        this.props.redirect()      
+                        localStorage.setItem('token', data.jwt)     
                     })
+                    .then(this.props.redirect())
                     .catch(
                         (error) => {
                             console.log(error)
