@@ -8,11 +8,13 @@ import {
     Button,    
 } from 'antd';
 
+const API = 'http://localhost:3000/users'
+
 
 class RegistrationForm extends React.Component {
     state = {
         confirmDirty: false,
-        autoCompleteResult: [],
+        redirect:false
     };
 
     handleSubmit = e => {
@@ -20,6 +22,23 @@ class RegistrationForm extends React.Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                let username = values.username;
+                let password = values.password;
+                let display_name = values.display_Name;
+                let avatar_picture = values.display_Image;
+                fetch(API, {
+                    method: 'POST',
+                    headers: {
+                    "Content-Type": "application/json"
+                },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password,
+                        display_name: display_name,
+                        avatar_picture: avatar_picture
+                    })
+                }).then(res => res.json())
+                .then(res => res.success ? this.props.redirect() : null)
             }
         });
     };
@@ -73,16 +92,12 @@ class RegistrationForm extends React.Component {
         };
         return (
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-                <Form.Item label="E-mail">
-                    {getFieldDecorator('email', {
+                <Form.Item label="Username">
+                    {getFieldDecorator('username', {
                         rules: [
                             {
-                                type: 'email',
-                                message: 'The input is not valid E-mail!',
-                            },
-                            {
                                 required: true,
-                                message: 'Please input your E-mail!',
+                                message: 'Please input your Username!',
                             },
                         ],
                     })(<Input />)}
