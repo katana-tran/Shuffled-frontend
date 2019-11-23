@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import '../style/gameboard.css'
 
 class Gameboard extends Component {
 
     render(){
         return(
-            <Div>Gameboard</Div>
+            <div className='main'>
+            </div>
         )
     }
 }
