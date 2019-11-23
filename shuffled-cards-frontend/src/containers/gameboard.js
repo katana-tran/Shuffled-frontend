@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import "../style/gameboard.css";
+import gameImg from "../images/FULLBOARD.png";
 
 class Gameboard extends Component {
-
-    render(){
-        return(
-            <Div>Gameboard</Div>
-        )
-    }
+  render() {
+    return (
+      <div className="gameboard">
+        <div className="gameImg"></div>
+      </div>
+    );
+  }
 }
 
-export default Gameboard
+export default Gameboard;
