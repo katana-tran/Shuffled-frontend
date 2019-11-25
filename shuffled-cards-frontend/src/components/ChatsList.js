@@ -81,9 +81,9 @@ const findActiveChat = (chats, activeChat) => {
 const mapChats = (chats, handleClick) => {
   return chats.map(chat => {
     return (
-      <li key={chat.id} onClick={() => handleClick(chat.id)}>
-        {chat.title}
-      </li>
+      <ul key={chat.id} onClick={() => handleClick(chat.id)}>
+         Chat name: {chat.title}
+      </ul>
     );
   });
 };
