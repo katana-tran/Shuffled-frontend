@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ChatsList from './ChatsList'
 
 
 class HomePage extends Component {
@@ -6,7 +7,7 @@ class HomePage extends Component {
     render(){
         return(
             <div>
-                HOME PAGE
+               <ChatsList/>
             </div>
 
         );
