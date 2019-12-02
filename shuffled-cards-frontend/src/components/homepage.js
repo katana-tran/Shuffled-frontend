@@ -5,6 +5,13 @@ import {API_ROOT} from '../constants/API.constants'
 import {setUserData} from '../redux/actions/User.actions'
 
 class HomePage extends Component {
+    constructor(){
+        super()
+        this.state = {
+            showingChat: false
+        }
+    }
+    
     componentDidMount(){
         fetch(`${API_ROOT}/findUserData`, 
         {
@@ -20,10 +27,20 @@ class HomePage extends Component {
         .then(json => console.log(json))
     }
 
+    handleClick = () => {
+        this.setState({
+            showingChat: true
+        })
+    }
+
+    showingChat = () => {
+        return this.state.showingChat === true? <ChatsList/> : <button onClick={this.handleClick}>Chat not shown</button>
+    }
+
     render(){
         return(
             <div>
-               <ChatsList/>
+               {this.showingChat()}
             </div>
 
         );
