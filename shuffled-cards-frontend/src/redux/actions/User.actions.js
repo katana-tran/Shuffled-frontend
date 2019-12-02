@@ -4,3 +4,10 @@ export const setDeck = userDeck => {
         payload: userDeck
     }
 }
+
+export const setUserData = userData => {
+    return{
+        type: "SET_USER_DATA",
+        payload: userData
+    }
+}
