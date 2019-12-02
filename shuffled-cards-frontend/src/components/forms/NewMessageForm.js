@@ -2,9 +2,11 @@ import React from 'react'
 import { API_ROOT, HEADERS } from '../../constants/API.constants'
 
 class NewMessageForm extends React.Component {
-    state = {
-        text: '',
-        chat_id: this.props.chat_id
+    constructor(){
+        super()
+        this.state = {
+            text: ''
+        }
     };
 
     componentWillReceiveProps = nextProps => {
@@ -21,7 +23,11 @@ class NewMessageForm extends React.Component {
         fetch(`${API_ROOT}/messages`, {
             method: 'POST',
             headers: HEADERS,
-            body: JSON.stringify(this.state)
+            body: JSON.stringify({
+                text: this.state.text,
+                chat_id: this.props.chat_id,
+                token: localStorage.getItem('token')
+            })
         });
         this.setState({ text: '' });
     };

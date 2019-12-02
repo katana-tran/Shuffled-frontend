@@ -18,6 +18,6 @@ const orderedMessages = messages => {
       (a, b) => new Date(a.created_at) - new Date(b.created_at)
     );
     return sortedMessages.map(message => {
-      return <ul key={message.id}>User: {message.user_id} {message.text}</ul>;
+      return <ul key={message.id}>{message.user.display_name} says "{message.text}"</ul>;
     });
   };
